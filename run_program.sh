@@ -1,0 +1,1 @@
+python train.py -s /home/ndvis/Downloads/Volume\ Data\ Set/fivejetRGB --eval
