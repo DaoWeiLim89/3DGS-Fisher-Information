@@ -260,8 +260,14 @@ def readCamerasFromTransforms(path, transformsfile, white_background, extension=
             FovY = fovy 
             FovX = fovx
 
+            '''cam_infos.append(CameraInfo(uid=idx, R=R, T=T, FovY=FovY, FovX=FovX,
+                            image_path=image_path, image_name=image_name, width=image.size[0], height=image.size[1])) '''
             cam_infos.append(CameraInfo(uid=idx, R=R, T=T, FovY=FovY, FovX=FovX,
-                            image_path=image_path, image_name=image_name, width=image.size[0], height=image.size[1]))
+                            depth_params={},
+                            image_path=image_path, image_name=image_name,
+                            depth_path="",
+                            width=image.size[0], height=image.size[1],
+                            is_test=False))
             
     return cam_infos
 
